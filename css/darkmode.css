@@ -1,0 +1,9 @@
+html {
+    transition: 0.2s;
+    filter: invert(1) hue-rotate(.5turn);
+}
+
+html, img {
+    transition: 0.1s;
+    filter: invert(1) hue-rotate(.5turn);
+}

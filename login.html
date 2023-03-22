@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="./css/login.css">
+        <link rel="stylesheet" href="" id="dark_mode">
+        <script>
+            dark = false;
+            document.oncontextmenu = function () { return false; };
+            document.onkeydown = function () {
+                if (window.event && window.event.keyCode == 123) {
+                    event.keyCode = 0;
+                    event.returnValue = false;
+                    return false;
+                }
+            };
+
+            function switchMode() {
+                if (!dark) {
+                    document.getElementById("dark_mode").href="./css/darkmode.css";
+                    dark = true;
+                } else {
+                    document.getElementById("dark_mode").href="";
+                    dark = false;
+                }
+            }
+        </script>
+    </head>
+    <body class="center" oncontextmenu="self.event.returnValue=false"; onselectstart="return false">
+        <div class="loginbox">
+            <img src="./res/img/head.jpg" class="header-icon">
+            <h1>Sign in</h1>
+            <form action="login.php" method="POST">
+                <input type="text" autocomplete="off">
+                <input type="password" autocomplete="off">
+                <button>Log in</button>
+            </form>
+            <span>Don't have an account? <a href="#">Sign up</a></span>
+        </div>
+        <button onclick="switchMode()" class="darkmode"></button>
+    </body>
+</html>
