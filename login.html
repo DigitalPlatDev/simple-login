@@ -3,39 +3,9 @@
         <title>Login</title>
         <link rel="stylesheet" href="./css/login.css">
         <link rel="stylesheet" href="" id="dark_mode">
-        <script>
-            var date = new Date();
-            var hour = date.getHours();
-            dark = hour < 18 && hour > 6? false : true;
-            document.oncontextmenu = function () { return false; };
-            document.onkeydown = function () {
-                if (window.event && window.event.keyCode == 123) {
-                    event.keyCode = 0;
-                    event.returnValue = false;
-                    return false;
-                }
-            };
-
-            function setMode() {
-                if (dark) {
-                    document.getElementById("dark_mode").href="./css/darkmode.css";
-                } else {
-                    document.getElementById("dark_mode").href="";
-                }
-            }
-
-            function switchMode() {
-                if (!dark) {
-                    document.getElementById("dark_mode").href="./css/darkmode.css";
-                    dark = true;
-                } else {
-                    document.getElementById("dark_mode").href="";
-                    dark = false;
-                }
-            }
-        </script>
+        <script src="./js/base.js"></script>
     </head>
-    <body class="center" oncontextmenu="self.event.returnValue=false"; onselectstart="return false"; onload="setMode()">
+    <body class="center" oncontextmenu="self.event.returnValue=false"; οndragstart="return false"; onselectstart="return false"; onload="setMode()">
         <div class="loginbox">
             <img src="./res/img/head.jpg" class="header-icon">
             <h1>Sign in</h1>
