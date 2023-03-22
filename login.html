@@ -4,15 +4,16 @@
         <link rel="stylesheet" href="./css/login.css">
         <link rel="stylesheet" href="" id="dark_mode">
         <script>
-            dark = false;
-            document.oncontextmenu = function () { return false; };
-            document.onkeydown = function () {
-                if (window.event && window.event.keyCode == 123) {
-                    event.keyCode = 0;
-                    event.returnValue = false;
-                    return false;
+            var date = new Date();
+            var hour = date.getHours();
+            dark = hour < 18 && hour > 6? false : true;
+            function setMode() {
+                if (dark) {
+                    document.getElementById("dark_mode").href="./css/darkmode.css";
+                } else {
+                    document.getElementById("dark_mode").href="";
                 }
-            };
+            }
 
             function switchMode() {
                 if (!dark) {
@@ -25,7 +26,7 @@
             }
         </script>
     </head>
-    <body class="center" oncontextmenu="self.event.returnValue=false"; onselectstart="return false">
+    <body class="center" oncontextmenu="self.event.returnValue=false"; onselectstart="return false"; onload="setMode()">
         <div class="loginbox">
             <img src="./res/img/head.jpg" class="header-icon">
             <h1>Sign in</h1>
